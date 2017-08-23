@@ -20,6 +20,8 @@ import (
 	"runtime"
 	"strings"
 
+	"weeb/soong/android"
+
 	"github.com/google/blueprint/proptools"
 )
 
@@ -131,6 +133,8 @@ type variableProperties struct {
 			Srcs         []string `android:"arch_variant"`
 			Exclude_srcs []string `android:"arch_variant"`
 		} `android:"arch_variant"`
+    // include weeb variables
+	Weeb android.Product_variables
 	} `android:"arch_variant"`
 }
 
@@ -336,6 +340,9 @@ type productVariables struct {
 	InstallExtraFlattenedApexes *bool `json:",omitempty"`
 
 	BoardUsesRecoveryAsBoot *bool `json:",omitempty"`
+
+	// include weeb variables
+	Weeb android.ProductVariables
 }
 
 func boolPtr(v bool) *bool {
