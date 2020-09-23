@@ -133,9 +133,9 @@ type variableProperties struct {
 			Srcs         []string `android:"arch_variant"`
 			Exclude_srcs []string `android:"arch_variant"`
 		} `android:"arch_variant"`
-	} `android:"arch_variant"`
-	// include weeb variables
+    // include weeb variables
 	Weeb android.Product_variables
+	} `android:"arch_variant"`
 }
 
 var defaultProductVariables interface{} = variableProperties{}
